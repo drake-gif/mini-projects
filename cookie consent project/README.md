@@ -19,8 +19,9 @@ cookie-consent-project/
 
 Running the project
 
-Clone repository:
-``` git clone https://github.comdrake-gif/cookie-consent-project.git ```
+1. Clone repository 
+``` git clone https://github.com/drake-gif/mini-projects/ ``` ## To get both repositories ( 1. cookie consent project
+                                                                                            2. age calculator project )
 
 Serve the folder locally. Do not just double-click `index.html`: browsers such as Chrome often refuse to save cookies on `file://` pages, so the banner would reappear on every reload.
 
