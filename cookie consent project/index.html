@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cookie consent</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<main>
+  <h1>A site with consent that actually works.</h1>
+  <p class="lede">Visitors choose which cookies to allow. Scripts for analytics and marketing stay blocked until they say yes, and the choice is remembered.</p>
+
+  <div class="demo" aria-live="polite">
+    <h2>Current consent</h2>
+    <table id="status"></table>
+    <p style="margin:1rem 0 0"><button class="btn" id="open-prefs">Cookie settings</button>
+    <button class="btn" id="reset">Clear choice</button></p>
+  </div>
+
+  <div class="demo">
+    <h2>Gate your own scripts</h2>
+    <p>Change the script's type to <code>text/plain</code> and add the category it needs. It runs only after that category is allowed.</p>
+<pre>&lt;script type="text/plain" data-consent="analytics"
+        src="https://example.com/analytics.js"&gt;&lt;/script&gt;
+
+// or react in code
+CookieConsent.onChange(c =&gt; {
+  if (c.analytics) startAnalytics();
+});</pre>
+  </div>
+</main>
+
+<!-- Banner -->
+<section id="cc-banner" role="region" aria-labelledby="cc-title" hidden>
+  <h2 id="cc-title">Cookies on this site</h2>
+  <p>We use essential cookies to make the site work. With your permission we also use cookies for analytics, preferences and marketing.</p>
+  <div class="cc-row">
+    <button class="btn primary" data-cc="accept">Accept all</button>
+    <button class="btn" data-cc="reject">Reject all</button>
+    <button class="btn" data-cc="open">Choose</button>
+  </div>
+</section>
+
+<!-- Preferences dialog -->
+<dialog id="cc-dialog" aria-labelledby="cc-dlg-title">
+  <div class="cc-head">
+    <h2 id="cc-dlg-title">Cookie settings</h2>
+    <p>Pick what you're comfortable with. You can change this at any time.</p>
+  </div>
+  <ul class="cc-list" id="cc-list"></ul>
+  <div class="cc-foot">
+    <button class="btn" data-cc="reject">Reject all</button>
+    <button class="btn" data-cc="save">Save choices</button>
+    <button class="btn primary" data-cc="accept">Accept all</button>
+  </div>
+</dialog>
+
+<script src="consent.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

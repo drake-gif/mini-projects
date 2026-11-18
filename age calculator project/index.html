@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Age Calculator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Instrument+Sans:wght@400;500;600&family=Rubik:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <h1>How old are you, exactly?</h1>
+  <p class="lede">Enter a birth date to see your age in years, months and days, plus the time until your next birthday.</p>
+
+  <form id="f" novalidate>
+    <div>
+      <label for="dob">Date of birth</label>
+      <input type="date" id="dob" required>
+    </div>
+    <div>
+      <label for="asof">Age on</label>
+      <input type="date" id="asof">
+    </div>
+    <div class="btns">
+      <button type="submit" class="button"><div><span>Calculate age</span></div></button>
+      <button type="button" id="reset" class="ghost">Clear</button>
+    </div>
+  </form>
+  <p class="error" id="err" role="alert"></p>
+
+  <section id="result" hidden aria-live="polite">
+    <div class="hero">
+      <div class="pair"><span class="n" id="y">0</span><span class="u" id="yl">years</span></div>
+      <div class="pair small"><span class="n" id="m">0</span><span class="u" id="ml">months</span></div>
+      <div class="pair small"><span class="n" id="d">0</span><span class="u" id="dl">days</span></div>
+    </div>
+    <p class="sentence" id="sentence"></p>
+
+    <div class="birthday">
+      <p id="bdayText"></p>
+      <div class="track" role="progressbar" aria-valuemin="0" aria-valuemax="100" id="bar"><div class="fill" id="fill"></div></div>
+      <div class="track-meta"><span id="lastB"></span><span id="nextB"></span></div>
+    </div>
+
+    <div class="grid" id="grid"></div>
+  </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
