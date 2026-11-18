@@ -17,7 +17,7 @@ Getting started
 No build step or installation is needed.
 
 1. Clone repository 
-``` git clone https://github.com/drake-gif/age-calculator-project.git ```
+``` git clone https://github.com/drake-gif/mini-projects/ ``` ## To get both repositories
 
 2. Keep `index.html`, `style.css` and `script.js` in the same folder.
 3. Open `index.html` in any modern browser.
